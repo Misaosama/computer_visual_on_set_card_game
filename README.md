@@ -7,12 +7,12 @@ https://en.wikipedia.org/wiki/Set_(card_game)
 # Data Structure
 The meaning of 4 dimensions of the vector 
 <pre>
-+-------------------------------------------------+ 
-|0 => number:   1         2         3		 	        | 
-|1 => shape:    diamond   oval      squiggle	    | 
-|2 => color:    red       green     purple	 	    | 
-|3 => shading:  solid     striped   open 	 	      | 
-+-------------------------------------------------+ 
++--------------------------------------------+ 
+|0 => number:   1         2         3        | 
+|1 => shape:    diamond   oval      squiggle | 
+|2 => color:    red       green     purple   | 
+|3 => shading:  solid     striped   open     | 
++--------------------------------------------+ 
 </pre>
 
 # TODO

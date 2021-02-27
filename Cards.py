@@ -70,13 +70,11 @@ def preprocess_image(image):
 	# its intensity. The adaptive threshold is set at 50 (THRESH_ADDER) higher
 	# than that. This allows the threshold to adapt to the lighting conditions.
 	img_w, img_h = np.shape(image)[:2]
-	print(img_h, img_w)
 	bkg_level = gray[int(img_h/100)][int(img_w/100)]
-	print(bkg_level)
 	thresh_level = bkg_level + BKG_THRESH
-	print(thresh_level)
+	thresh_level = min(195, thresh_level)
 	
-	retval, thresh = cv2.threshold(blur,127,255,cv2.THRESH_BINARY)
+	retval, thresh = cv2.threshold(blur,thresh_level,255,cv2.THRESH_BINARY)
 	
 	return thresh
 

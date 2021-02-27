@@ -6,7 +6,7 @@ import os
 import Cards
 
 if __name__ == "__main__":
-	image = cv2.imread('image/image.png')
+	image = cv2.imread('image/image2.webp')
 	
 	img = Cards.preprocess_image(image)
 	
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 		# For each contour detected:
 		for i in range(len(cnts_sort)):
 			if (cnt_is_card[i] == 1):
-				cv2.drawContours(image,cnts_sort[i],-1,(255,255,255),3)
+				cv2.drawContours(image,cnts_sort[i],-1,(0,0,255),3)
 				cards.append(Cards.preprocess_card(cnts_sort[i], image))
 
 		for i in range(len(cards)):
@@ -33,11 +33,14 @@ if __name__ == "__main__":
 			input("Press Enter to continue...")
 	
 	# Output img with window name as 'image' 
-	cv2.imshow('image', img)  
+	cv2.imshow('image', img)
+	cv2.waitKey(10)
+	input("Press Enter to continue...")
+	cv2.imshow('image', image)
 	
 	# Maintain output window utill 
 	# user presses a key 
-	cv2.waitKey(0)         
+	cv2.waitKey(10)         
 	
 	# Destroying present windows on screen 
 	cv2.destroyAllWindows()
